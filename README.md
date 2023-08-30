@@ -46,7 +46,7 @@ Then, in `allfxns.pm`, please pay attention to the Line 8 where configuring Inli
 
 ![](https://github.com/Liying1996/Generate_features/blob/main/Figs/2_1.jpg)
 
-Alternatively, you can directly copy it from my path: `/home/ying/localperl/lib/site_perl/5.38.0/x86_64-linux`
+Alternatively, you can directly copy it from my path: `/home/ying/localperl/lib/site_perl/5.38.0/x86_64-linux/allfxns.pm`
 
 #### 2.2 R codes (calc_kmer_freqs.R)
 
