@@ -44,7 +44,7 @@ As we typically lack root privileges, we are unable to place this package in the
 
 Then, in `allfxns.pm`, please pay attention to the Line 8 where configuring Inline::Python can be quite challenging. However, it's important to note that `generate_training_input.pl` doesn't actually require the Python functionality from `allfxns`. Therefore, please go ahead and directly comment out this line.
 
-![](https://github.com/Liying1996/Generate_features/Figs/2_1.jpg)
+![](https://github.com/Liying1996/Generate_features/blob/main/Figs/2_1.jpg)
 
 Alternatively, you can directly copy it from my path: `/home/ying/localperl/lib/site_perl/5.38.0/x86_64-linux`
 
@@ -64,7 +64,7 @@ Second, the last line:
  writefile(inp.tbl,"seqFeatWithKmerFreqs.txt", row.names=T)
 ```
 
-![](https://github.com/Liying1996/Generate_features/Figs/2_2_1.jpg)
+![](https://github.com/Liying1996/Generate_features/blob/main/Figs/2_2_1.jpg)
 
 You might encounter the issue mentioned above; in this case, you can modify it to:
 
@@ -80,7 +80,7 @@ inp.tbl=inp.tbl[,apply(inp.tbl,2,var)!=0]
 
 The reason for this is that when there are no numeric values, the variance calculation results in NA, so the code mentioned above is not boolean variables.. Consequently, it will trigger an "Undefined column" error.
 
-![](https://github.com/Liying1996/Generate_features/Figs/2_2_2.jpg)
+![](https://github.com/Liying1996/Generate_features/blob/main/Figs/2_2_2.jpg)
 
 So, here you must modify the `inp.tbl=inp.tbl[,apply(inp.tbl,2,var)!=0]` to :
 
@@ -112,7 +112,7 @@ sed -i '1s/^/GENEID\t/' seqFeatWithKmerFreqs.txt
 
 The  `all_HLs_human_PC1.txt` file:
 
-![](https://github.com/Liying1996/Generate_features/Figs/3.jpg)
+![](https://github.com/Liying1996/Generate_features/blob/main/Figs/3.jpg)
 
 **Please note that the file names must include the keywords "Human" or "Mouse".**
 
