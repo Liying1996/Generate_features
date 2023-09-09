@@ -143,6 +143,7 @@ perl generate_training_input.pl all_HLs_human_PC1.txt | gzip -c > all_HLs_human_
 # Input: all_HLs_human_featTable.txt.gz 
 # (Or other file names, please modify the calc_kmer_freqs.R) 
 Rscript calc_kmer_freqs.R # Output: seqFeatWithKmerFreqs.txt
+```
 3. Add "GeneID" to 1st line
 ```
 sed -i '1s/^/GENEID\t/' seqFeatWithKmerFreqs.txt
