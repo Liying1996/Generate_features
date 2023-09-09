@@ -131,11 +131,13 @@ Please note that during execution, "all_HLs_human_featTable.txt.gz" must be pres
 Upon completion, a file named "seqFeatWithKmerFreqs.txt" will be generated.
 
 
-In conclusion, 
+In conclusion, please use the following modified codes to generate features: 
 ```
-# Input: Gene list; First col - ensembl ID; Second: gene symbol; (Please note that the input file name must have the keyword: "Human" or "Mouse")
+# Input: Gene list; First col - ensembl ID; Second: gene symbol; 
+# (Please note that the input file name must have the keyword: "Human" or "Mouse")
 perl generate_training_input.pl all_HLs_human_PC1.txt | gzip -c > all_HLs_human_featTable.txt.gz 
-# Input: all_HLs_human_featTable.txt.gz (Or other file names, please modify the calc_kmer_freqs.R) 
+# Input: all_HLs_human_featTable.txt.gz 
+# (Or other file names, please modify the calc_kmer_freqs.R) 
 Rscript calc_kmer_freqs.R # Output: seqFeatWithKmerFreqs.txt
 sed -i '1s/^/GENEID\t/' seqFeatWithKmerFreqs.txt
 ```
