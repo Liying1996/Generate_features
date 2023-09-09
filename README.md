@@ -120,6 +120,7 @@ Additionally, you will need the following files, which can be downloaded from th
 - mm10_ensembl90_3utrs.fa.gz (mouse)
 - mm10_ensembl90_5utrs.fa.gz (mouse)
 - mm10_ensembl90_orfs.fa.gz (mouse)
+- Mus_musculus.GRCm3.90.chosenTranscript.gtf.gz (mouse)
 
 The third column "PC1" is the "Halflife" in `all_HLs_human_featTable.txt.gz` actually. **You can also provide only the first two columns. The first two columns are gene names, but in the result, the "Halflife" column will be empty. At this point, you can provide your own list of genes, as needed.**
 
@@ -135,6 +136,6 @@ In conclusion,
 # Input: Gene list; First col - ensembl ID; Second: gene symbol; (Please note that the input file name must have the keyword: "Human" or "Mouse")
 perl generate_training_input.pl all_HLs_human_PC1.txt | gzip -c > all_HLs_human_featTable.txt.gz 
 # Input: all_HLs_human_featTable.txt.gz (Or other file names, please modify the calc_kmer_freqs.R) 
-Rscript calc_kmer_freqs.R
+Rscript calc_kmer_freqs.R # Output: seqFeatWithKmerFreqs.txt
 sed -i '1s/^/GENEID\t/' seqFeatWithKmerFreqs.txt
 ```
