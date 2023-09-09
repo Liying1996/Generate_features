@@ -110,13 +110,13 @@ sed -i '1s/^/GENEID\t/' seqFeatWithKmerFreqs.txt
 
 `perl generate_training_input.pl all_HLs_human_PC1.txt | gzip -c > all_HLs_human_featTable.txt.gz`
 
-The  `all_HLs_human_PC1.txt` file:
+eg.The  `all_HLs_mouse_PC1.txt` file:
 
 ![](https://github.com/Liying1996/Generate_features/blob/main/Figs/3.jpg)
 
 **Please note that the file names must include the keywords "Human" or "Mouse".**
 
-Additionally, you will need the following files, which can be downloaded from the datasets provided by the author or copied from my folder ().
+Additionally, you will need the following files, which can be downloaded from the datasets provided by the author or copied from my folder (/mnt/data1/ying/saluki_paper/us/saluki_data).
 
 The third column "PC1" is the "Halflife" in `all_HLs_human_featTable.txt.gz` actually. **You can also provide only the first two columns. The first two columns are gene names, but in the result, the "Halflife" column will be empty. At this point, you can provide your own list of genes, as needed.**
 
