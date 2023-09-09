@@ -132,12 +132,18 @@ Upon completion, a file named "seqFeatWithKmerFreqs.txt" will be generated.
 
 
 In conclusion, please use the following modified codes to generate features: 
+1. Generate basic features 
 ```
 # Input: Gene list; First col - ensembl ID; Second: gene symbol; 
 # (Please note that the input file name must have the keyword: "Human" or "Mouse")
 perl generate_training_input.pl all_HLs_human_PC1.txt | gzip -c > all_HLs_human_featTable.txt.gz 
+```
+2. Calculate k-mers
+```
 # Input: all_HLs_human_featTable.txt.gz 
 # (Or other file names, please modify the calc_kmer_freqs.R) 
 Rscript calc_kmer_freqs.R # Output: seqFeatWithKmerFreqs.txt
+3. Add "GeneID" to 1st line
+```
 sed -i '1s/^/GENEID\t/' seqFeatWithKmerFreqs.txt
 ```
