@@ -128,3 +128,13 @@ The third column "PC1" is the "Halflife" in `all_HLs_human_featTable.txt.gz` act
 Please note that during execution, "all_HLs_human_featTable.txt.gz" must be present in the current directory. Also, please be aware that this file is set to read human data by default. If you intend to work with mouse data, make sure to modify the script's line 7 accordingly.
 
 Upon completion, a file named "seqFeatWithKmerFreqs.txt" will be generated.
+
+
+In conclusion, 
+```
+# Input: Gene list; First col - ensembl ID; Second: gene symbol; (Please note that the input file name must have the keyword: "Human" or "Mouse")
+perl generate_training_input.pl all_HLs_human_PC1.txt | gzip -c > all_HLs_human_featTable.txt.gz 
+# Input: all_HLs_human_featTable.txt.gz (Or other file names, please modify the calc_kmer_freqs.R) 
+Rscript calc_kmer_freqs.R
+sed -i '1s/^/GENEID\t/' seqFeatWithKmerFreqs.txt
+```
